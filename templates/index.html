@@ -1,0 +1,22 @@
+<body>
+    <form method="POST" action="/order">
+        <h2>Place Order</h2>
+        <input type="text" name="symbol" placeholder="Symbol (e.g., BTCUSDT)" required>
+        <select name="side" required>
+            <option value="BUY">BUY</option>
+            <option value="SELL">SELL</option>
+        </select>
+        <select name="order_type" required>
+            <option value="MARKET">MARKET</option>
+            <option value="LIMIT">LIMIT</option>
+        </select>
+        <input type="text" name="quantity" placeholder="Quantity" required>
+        <input type="text" name="price" placeholder="Limit Price (if applicable)">
+
+        <button type="submit">Submit Order</button>
+    </form>
+
+    {% if response_message %}
+    <pre>{{ response_message }}</pre>
+    {% endif %}
+</body>
